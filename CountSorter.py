@@ -43,7 +43,7 @@ class CountSorter:
         """
         res = OrderedDict()
         node = self._list.tail
-        while not node:
+        while node:
             for item in node.data["items"]:
                 if len(res) == num_items:
                     break
