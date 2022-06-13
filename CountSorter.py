@@ -37,8 +37,8 @@ class CountSorter:
     def get_most_frequent(self, num_items:int) -> OrderedDict[Any,int]:
         """
         Get the most frequent `num_items` items along with their counts in sorted order (largest to smallest)
-        Example:
-            [("c": 6, "b": 5, "a": 5]
+        Example Result:
+            [("c", 6), ("b",5) , ("a", 5)]
         Runtime: O(num_items)
         """
         res = OrderedDict()
