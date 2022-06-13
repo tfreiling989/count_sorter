@@ -9,7 +9,10 @@ class CountSorter:
         self._item_nodes = {}
 
     def add_occurrence(self, item):
-        """Adds an occurrence of an item. O(1)"""
+        """
+        Adds an occurrence of an item. 
+        Runtime: O(1)
+        """
         if item in self._item_nodes:
             node = self._item_nodes[item]
             node_count = node.data["count"]
@@ -33,10 +36,10 @@ class CountSorter:
 
     def get_most_frequent(self, num_items:int) -> OrderedDict[Any,int]:
         """
-        Get most frequent items along with their counts. O(num_items)
+        Get the most frequent `num_items` items along with their counts in sorted order (largest to smallest)
         Example:
-            [("a": 5, "b": 5, "c": 6]
-
+            [("c": 6, "b": 5, "a": 5]
+        Runtime: O(num_items)
         """
         res = OrderedDict()
         node = self._list.tail
