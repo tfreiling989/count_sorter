@@ -43,15 +43,12 @@ class CountSorter:
         """
         res = OrderedDict()
         node = self._list.tail
-        while len(res) < num_items:
-            if not node:
-                break
-            else:
-                for item in node.data["items"]:
-                    if len(res) == num_items:
-                        break
-                    else:
-                        res[item] = node.data["count"]
-                node = node.prev
+        while not node:
+            for item in node.data["items"]:
+                if len(res) == num_items:
+                    break
+                else:
+                    res[item] = node.data["count"]
+            node = node.prev
 
         return res
